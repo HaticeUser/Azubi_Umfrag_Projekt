@@ -9,9 +9,10 @@
     box-sizing: border-box;
   }
 
-  body {
+body {
     margin: 0px;
     font-family: 'segoe ui';
+
   }
 
   .nav {
@@ -182,6 +183,8 @@
 }
 
 .info-Containers{
+
+  border-top: 5px solid #354935;
   display: flex;
   background-image: linear-gradient(to left, #553c9a, #b393d3);
   height: 1100px;
@@ -195,19 +198,19 @@
   border-bottom: 2px solid rgba(47, 46, 46, 0.83);
 }
 .info-text-Container{
-  font-family: Georgia;
   position: absolute;
   top: 40px;
   left: 40px;
 }
 
 .info-text-Container > .info-headline{
-  color: #f6efef;
+  color: #2f2e2e;
   text-decoration: underline rgba(87, 84, 84, 0.72) 2px;
 }
 
 .info-text-Container > p{
-  color: #f8f6f6;
+  color: #e8e0e0;
+  font-weight: bold;
 }
 
 #info-left-text-Container{
@@ -219,8 +222,10 @@
 
 
 #info-left-text-Container >.info-headline{
-  color: #f6efef;
+  color: #2f2e2e;
   text-decoration: underline rgba(87, 84, 84, 0.72) 2px;
+  text-align: right;
+
 }
 
 #info-News-Container{
@@ -228,7 +233,14 @@
 }
 
 #info-left-text-Container > p {
-  color: #f8f6f6;
+  margin-top: 20px;
+  color: #e8e0e0;
+  font-weight: bold;
+  flex-wrap: wrap;
+  width: 1100px;
+  text-align: right;
+  align-items: flex-end;
+
 }
 
 #Info-left-Img{
@@ -249,6 +261,79 @@
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
   opacity: 0.9;
 }
+
+.bi-bi-caret-right-fill{
+  color: black;
+}
+
+.extra-info{
+  font-weight: bold;
+
+}
+
+
+/*
+-------------------------- Footer Bereich ------------------------
+*/
+
+.footer-Container{
+  display: flex;
+  background-color: #262424;
+  border-top: 3px solid grey;
+  flex-direction: row;
+  justify-content: space-between;
+
+}
+
+.footer-Container > .footer-links-Container{
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+}
+
+.footer-links-Container > .link > a{
+  text-decoration: none;
+  
+}
+.footer-links-Container > .link > a:link{
+  color: darkred;
+
+}
+
+.footer-links-Container > .link > a:hover{
+  color: #af2929;
+
+}
+
+
+.footer-links-Container > .link > a:visited{
+  color: darkblue;
+
+}
+
+#Copyright-footer-license{
+  position: relative;
+  top: 120px ;
+  font-size: 10px;
+}
+
+#Network-footer-links{
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  top: 155px;
+  right: 650px;
+  gap: 20px;
+
+}
+
+.Network-link > a{
+  text-decoration: none;
+  color: #7e7878;
+  font-size: 14px;
+}
+
 
 @media (max-width:900px) {
   .nav > .nav-btn {
