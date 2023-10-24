@@ -1,11 +1,14 @@
     "use strict"
 
-    import {locationHandler} from  "./Locationhandler.js"
+    import {locationsHandler} from  "./Locationhandler.js"
 
 
+    let locationHref = new locationsHandler();
    export function handleLocationID(locationID){
-        locationHandler(locationID);
-        console.log("st1")
+        locationHref.locationHandler(locationID);
+
+
+
 
 
     }
