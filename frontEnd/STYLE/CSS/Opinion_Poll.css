@@ -1,5 +1,8 @@
 
 
+body{
+    background-image: linear-gradient(to left, #7f5cce, #b393d3);
+}
 
 .opinion_Poll-Creater-Container{
     background-color: grey;
@@ -23,7 +26,7 @@
 .opinion_Poll-header{
     text-align: center;
     padding: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 
 }
 
@@ -32,9 +35,9 @@
     padding: 3px;
     font-size: 15px;
     font-weight: bold;
-    border: 2px solid #c97353;
+    border: 2px solid #c78d76;
     border-radius: 4px;
-    background-color: orange;
+    background-color: #ffc143;
     cursor: pointer;
 
 
@@ -55,18 +58,40 @@
     border-bottom: 2px solid orange ;
     font-size: large;
     margin-right: 18px;
+    background-color: transparent;
 }
 
 .input-Container{
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
 }
-
 .opinionInput{
     font-size: 18px ;
     padding: 3px;
     outline-color: orange;
-
+    border: 2px solid #9b6708;
+    background-color: #d4e3d4;
 }
+
+.opinionInput:hover{
+    border: 2px solid #d38b0b;
+}
+
+#create-btn{
+    position: relative;
+    top: 30px;
+    left: 300px;
+    background-color: #a24b4b;
+    font-family: Arial;
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px solid #c78d76;
+    border-radius: 7px;
+    width: 150px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
 
 
