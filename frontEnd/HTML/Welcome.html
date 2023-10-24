@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Opinion Pollinus</title>
-    <link rel="stylesheet" href="../STYLE/CSS/Umfrage.css">
+    <link rel="stylesheet" href="../STYLE/CSS/Welcome.css">
     <link rel="stylesheet" href="../STYLE/BOOTSTRAP/Main.css">
 
 
@@ -30,7 +30,7 @@
         </div>
 
         <div class="nav-links">
-            <button class="opinion_poll_header_link"> <a href="//github.io/jo_geek" target="_blank" >Opinion Polls</a></button>
+            <button class="opinion_poll_header_link"> <a href="Opinion_Poll.html" target="_blank" >Opinion Polls</a></button>
             <a href="http://stackoverflow.com/users/4084003/" target="_blank">News</a>
             <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Support</a>
             <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Profile</a>
@@ -54,9 +54,11 @@
                 <p>Its a Website where You can ask whatever you want and turn it into a survey for others <br>
                     If you want to, you're survey can be Anonymous, for you or just others </p>
 
+
+
                 <div class="button-overlay-Container">
-                    <button class="overlay-btn">Anmeldung</button>
-                    <button class="overlay-btn">Umfrage erstellen</button>
+                    <button class="overlay-btn" onclick="import('../JAVASCRIPT/Main.js').then(module=> module.handleLocationID(0.1))">Anmeldung</button>
+                    <button class="overlay-btn" onclick="import('../JAVASCRIPT/Main.js').then(module=> module.handleLocationID(0.2))">Umfrage erstellen</button>
                 </div>
             </div>
 
@@ -192,6 +194,10 @@
 </footer>
 
 
-<script src="../JAVASCRIPT/Main.js"></script>
+<script type="module">
+    import {handleLocationID} from "../JAVASCRIPT/Main.js";
+</script>
+
+
 </body>
 </html>
