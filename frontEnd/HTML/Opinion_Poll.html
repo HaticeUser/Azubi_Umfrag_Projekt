@@ -52,7 +52,7 @@
 
 
                     <div class="opinion_Poll-header">
-                    <input id="themeInput" type="text" placeholder="Ihr Thema" size="28" maxlength="80">
+                    <input id="themeInput" value="" type="text" placeholder="Ihr Thema" size="28" maxlength="80">
 
                     <button class="header-btn" onclick="import('../JAVASCRIPT/Main.js').then(modules => modules.handleRequest(event)).catch(error => console.error('Error'+error)) ">Create Opinion fields</button>
 
@@ -69,7 +69,7 @@
 
 
 
-                    <button id="create-btn">Publish</button>
+                    <button id="create-btn" onclick="import('../JAVASCRIPT/Main.js').then(modules => modules.handleRequest(event)).catch(error => console.error('Error'+error)) ">Publish</button>
 
 
               <section class="functioning_dispatch-info-Container">
@@ -90,6 +90,7 @@
 
 <script type="module">
     import{handleRequest} from "../JAVASCRIPT/Main.js"
+
 </script>
 
 </body>

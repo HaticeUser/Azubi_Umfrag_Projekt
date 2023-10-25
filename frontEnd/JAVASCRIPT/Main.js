@@ -9,6 +9,7 @@
     export function handleRequest(event){
         event.preventDefault();
         opinion_Poll.createInput();
+        opinion_Poll.saveData();
 
 
     }
