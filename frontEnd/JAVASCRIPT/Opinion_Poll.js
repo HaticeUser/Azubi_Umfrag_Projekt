@@ -1,4 +1,4 @@
-export class Opinion_Poll{
+export class OpinionPoll{
     constructor() {
         this.input_ID = 1.12;
         this.savedInput_ID=0;
@@ -7,29 +7,29 @@ export class Opinion_Poll{
         this.input_object = JSON.parse(localStorage.getItem("input_Data")) || {
             input_Value: String,
             input_ID:Number,
-                inputTheme:{
-                 inputTheme_Value:String,
-                 input_Theme_ID: Number,
+            inputTheme:{
+                inputTheme_Value:String,
+                input_Theme_ID: Number,
             }
         }
     }
 
-    createInput(){
-        try {
+    createInput( ){
+
             let createdInput= document.createElement("input");
             createdInput.classList.add("opinionInput");
-            this.savedInput_ID= createdInput.id=this.input_ID;
+
             this.createdInput_Container.append(createdInput);
+             this.savedInput_ID= createdInput.id=this.input_ID;
 
-            localStorage.setItem("input_Data",JSON.stringify(this.savedInput_ID))
+             localStorage.setItem("input_Data",JSON.stringify(this.savedInput_ID))
 
-            this.createdInputLength++;
-            this.input_ID +=1.12;
-            console.log(this.input_ID);
-            console.log(this.createdInputLength);
-        }catch(err){
-            throw "creating an input didnt work"
-        }
+             this.createdInputLength++;
+             this.input_ID +=1.12;
+             console.log(this.input_ID);
+             console.log(this.createdInputLength);
+
+
     }
 
 }

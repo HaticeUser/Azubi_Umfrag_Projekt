@@ -6,7 +6,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="../STYLE/CSS/Opinion_Poll.css">
     <link rel="stylesheet" href="../STYLE/CSS/Welcome.css">
-    <link rel="stylesheet" href="../STYLE/BOOTSTRAP/Opinion_Poll.css">
+
 </head>
 <body>
 
@@ -49,24 +49,18 @@
 
             <div class="create-Opinion_Poll-Container">
 
-                <form class="format">
+
 
                     <div class="opinion_Poll-header">
                     <input id="themeInput" type="text" placeholder="Ihr Thema" size="28" maxlength="80">
-                    <button class="header-btn" onclick="import('../JAVASCRIPT/Main.js').then(module => module.handleRequest()) ">Create Opinion fields</button>
+
+                    <button class="header-btn" onclick="import('../JAVASCRIPT/Main.js').then(modules => modules.handleRequest(event)).catch(error => console.error('Error'+error)) ">Create Opinion fields</button>
+
                     <button class="header-btn">delete all</button>
                     </div>
 
                     <div id="createdInput-Container">
-                        <div class="input-Container" id="input-1_0">
-                        <input class="opinionInput" type="text" placeholder="opinion" value="" maxlength="130" size="80">
-                        </div>
-                        <div class="input-Container" id="input-2_0">
-                            <input class="opinionInput" type="text" placeholder="opinion" value="" maxlength="130" size="80">
-                        </div>
-                        <div class="input-Container" id="input-3_0">
-                            <input class="opinionInput" type="text" placeholder="opinion" value="" maxlength="130" size="80">
-                        </div>
+
 
                     </div>
 
@@ -76,7 +70,7 @@
 
 
                     <button id="create-btn">Publish</button>
-                </form>
+
 
               <section class="functioning_dispatch-info-Container">
                   <p class="functioning_dispatch-info">
