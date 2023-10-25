@@ -94,4 +94,15 @@ body{
 }
 
 
+.functioning_dispatch-info-Container{
+    position: relative;
+    top: 60px;
+    left: 265px;
+}
+
+.functioning_dispatch-info-Container > .functioning_dispatch-info{
+
+}
+
+
 

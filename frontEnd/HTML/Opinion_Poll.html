@@ -53,7 +53,7 @@
 
                     <div class="opinion_Poll-header">
                     <input id="themeInput" type="text" placeholder="Ihr Thema" size="28" maxlength="80">
-                    <button class="header-btn">Create Opinion fields</button>
+                    <button class="header-btn" onclick="import('../JAVASCRIPT/Main.js').then(module => module.handleRequest()) ">Create Opinion fields</button>
                     <button class="header-btn">delete all</button>
                     </div>
 
@@ -76,9 +76,13 @@
 
 
                     <button id="create-btn">Publish</button>
-
-
                 </form>
+
+              <section class="functioning_dispatch-info-Container">
+                  <p class="functioning_dispatch-info">
+                      Ihre Sendung ist fehlgeschlagen !
+                  </p>
+              </section>
 
 
 
@@ -90,6 +94,9 @@
     </div>
 </main>
 
+<script type="module">
+    import{handleRequest} from "../JAVASCRIPT/Main.js"
+</script>
 
 </body>
 </html>
