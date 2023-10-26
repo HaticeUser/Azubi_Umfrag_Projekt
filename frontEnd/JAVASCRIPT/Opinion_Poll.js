@@ -40,21 +40,21 @@ export class OpinionPoll {
 
         this.deleteButtons.push(this.deleteButton);
 
-console.log(this.deleteButtons);
-        }
+            this.deleteButtons.forEach((delBtn) => {
+                delBtn.addEventListener("click", (event)=>{
+                    event.target.parentElement.remove();
+                    this.createdInput--;
 
-        this.deleteButtons.forEach(function (delBtn) {
-            delBtn.addEventListener("click", ()=>{
-                this.createdInput--;
-                this.opinionInput_Container.remove(this.createdInput_Container);
+
+                })
+
             })
 
-        })
 
 
 
 
-
+        }
 
     }
 
