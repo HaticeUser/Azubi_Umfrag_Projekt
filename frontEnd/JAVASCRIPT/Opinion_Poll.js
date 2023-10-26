@@ -1,62 +1,89 @@
-export class OpinionPoll{
+
+export class OpinionPoll {
+
     constructor() {
-        this.input_ID = 1.12;
-        this.savedInput_ID=0;
-        this.createdInputLength=0;
         this.createdInput_Container = document.getElementById("createdInput-Container");
-        this.inputTheme=document.getElementById("themeInput");
-        this.inputThemeID=1.1;
-        this.input_Data_Info = [];
+        this.theme_Input = document.getElementById("themeInput");
 
-        this.createdOpinion_Polls=0;
-    }
+        this.input = document.createElement("input");
+        this.deleteButton = document.createElement("input");
+        this.opinionInput_Container = document.createElement("div");
 
-    createInput( ){
+        this.createdInput=0;
 
-            let createdInput= document.createElement("input");
-            createdInput.classList.add("opinionInput");
-            createdInput.value="";
+        this.deleteButtons=[];
 
-            this.createdInput_Container.append(createdInput);
-             this.savedInput_ID= createdInput.id=this.input_ID;
+        this.input_Data = [
 
-             this.saveData(createdInput,this.savedInput_ID,this.createdInputLength)
-
-             this.createdInputLength++;
-             this.input_ID +=1.12;
-             console.log(this.savedInput_ID);
-             console.log(this.createdInputLength);
-    }
-
-
-    saveData(createdInput,savedInput_ID,createdInputLength){
-
-        console.log(createdInput.value)
-
-      let inputData = {
-            input_Value: createdInput.value,
-                input_ID:savedInput_ID,
-            createdInput_Length:createdInputLength,
-            inputTheme: {
-                inputTheme_Value: this.inputTheme.value,
-                input_Theme_ID: this.inputThemeID,
-            }}
-
-        this.input_Data_Info.push(inputData);
-
-      console.log(inputData)
-
-        this.inputThemeID+=1.1;
-    }
-
-    PublishUserCreation(){
+        ]
 
     }
 
-    SendDataToBackend(){
+    handleInputCreation(){
+
+        if(this.createdInput < 4 ){
+            this.createdInput++;
+        this.input = document.createElement("input");
+        this.deleteButton = document.createElement("input");
+        this.deleteButton.setAttribute("type","button");
+        this.deleteButton.setAttribute("value","X");
+        this.opinionInput_Container = document.createElement("div");
+        this.opinionInput_Container.classList.add("OpinionInput-Container");
+        this.deleteButton.classList.add("deleteInput-btn");
+        this.input.type="text";
+        this.input.placeholder="Answer";
+        this.input.size=30;
+        this.input.classList.add("opinionInput");
+        this.createdInput_Container.appendChild(this.opinionInput_Container);
+        this.opinionInput_Container.append(this.input);
+        this.opinionInput_Container.appendChild(this.deleteButton);
+
+        this.deleteButtons.push(this.deleteButton);
+
+console.log(this.deleteButtons);
+        }
+
+        this.deleteButtons.forEach(function (delBtn) {
+            delBtn.addEventListener("click", ()=>{
+                this.createdInput--;
+                this.opinionInput_Container.remove(this.createdInput_Container);
+            })
+
+        })
+
+
+
+
+
 
     }
 
+    saveData(){
+
+    }
+    handlePublication(){
+
+        console.log(this.input.value);
+        console.log();
+
+
+    }
+
+    handleReset(){
+
+    }
+
+
+
+
+
+
+
+
+//Backend Logik
+
+    sendDataToBackend(){
+
+    }
 }
-
 

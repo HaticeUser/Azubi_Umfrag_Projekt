@@ -6,16 +6,27 @@
     let locationHref = new locationsHandler();
     let opinion_Poll = new OpinionPoll();
 
-    export function handleRequest(event){
-        event.preventDefault();
-        opinion_Poll.createInput();
-        opinion_Poll.saveData();
 
 
-    }
+    // Welcome.html functions
 
    export function handleLocationID(locationID){
 
         locationHref.locationHandler(locationID);
 
+    }
+
+
+    // Opinion_Poll.html functions
+    export function handleInputCreationRequest(){
+        opinion_Poll.handleInputCreation();
+    }
+
+    export function handlePublicationRequest(){
+        opinion_Poll.handlePublication();
+
+    }
+
+    export function handleResetRequest(){
+       opinion_Poll.handleReset();
     }
