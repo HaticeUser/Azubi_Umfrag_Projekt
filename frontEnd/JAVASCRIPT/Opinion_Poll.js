@@ -11,6 +11,7 @@ export class OpinionPoll {
         this.opinionInput_Container = document.createElement("div");
 
         this.createdInput=0;
+        this.generated_ObjectID= 111.1;
 
         this.deleteButtons=[];
         this.inputs=[];
@@ -61,7 +62,8 @@ export class OpinionPoll {
                         if(this.input.value==""){
                             alert("please remove the invalid input or write something in it")
                         }else{
-
+                            // Darum Kümmern das nicht doppelt gespeichert wird
+                            // speichern der einzelnden, nicht aller input.values mit einem enter klick
                             this.inputValues.push(input.value);
                             console.log(this.inputValues)
                         }
@@ -81,6 +83,9 @@ export class OpinionPoll {
 
     saveData(){
 
+       let objIdToString = this.generated_ObjectID.toString();
+       let returnObjIDNumbers= objIdToString.substring(0,5);
+
         let inputData ={
             input_Theme_Value:this.theme_Input.value,
             input_Theme_ID:this.theme_Input_ID,
@@ -89,30 +94,39 @@ export class OpinionPoll {
                 input_ID:[],
                 inputs_Length: this.createdInput,
             },
+            object_ID: returnObjIDNumbers
         }
 
-
-
-
-
         for(let i = 0; i < this.createdInput; i++){
-
             inputData.input.input_Value.push(this.inputValues[i]);
         }
 
         this.input_Data.push(inputData);
 
         console.log(this.input_Data);
-
-
+        this.generated_ObjectID += 111.1;
+        console.log(this.generated_ObjectID);
+        console.log(returnObjIDNumbers);
     }
     handlePublication(){
         this.saveData();
-
+        this.handleReset()
 
     }
 
     handleReset(){
+
+        this.createdInput =0;
+        this.theme_Input.value="";
+        this.inputs.forEach((input)=>{
+            input.removeEventListener("keydown",this.handleInputKeyDown);
+            input.value="";
+        })
+
+        // removen der divs kümmern
+        this.input_Data = [];
+        this.inputs=[];
+        this.inputValues=[];
 
     }
 
