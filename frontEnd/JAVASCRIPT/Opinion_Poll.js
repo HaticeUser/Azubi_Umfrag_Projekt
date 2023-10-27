@@ -4,6 +4,7 @@ export class OpinionPoll {
     constructor() {
         this.createdInput_Container = document.getElementById("createdInput-Container");
         this.theme_Input = document.getElementById("themeInput");
+        this.theme_Input_ID = 0,
 
         this.input = document.createElement("input");
         this.deleteButton = document.createElement("input");
@@ -12,10 +13,11 @@ export class OpinionPoll {
         this.createdInput=0;
 
         this.deleteButtons=[];
+        this.inputs=[];
+        this.inputValues=[];
 
-        this.input_Data = [
 
-        ]
+        this.input_Data = [];
 
     }
 
@@ -37,6 +39,7 @@ export class OpinionPoll {
         this.createdInput_Container.appendChild(this.opinionInput_Container);
         this.opinionInput_Container.append(this.input);
         this.opinionInput_Container.appendChild(this.deleteButton);
+        this.inputs.push(this.input);
 
         this.deleteButtons.push(this.deleteButton);
 
@@ -51,6 +54,24 @@ export class OpinionPoll {
             })
 
 
+            this.inputs.forEach((input)=>{
+            input.addEventListener("keydown",(event)=>{
+                    if(event.key === "Enter"){
+                        event.preventDefault();
+                        if(this.input.value==""){
+                            alert("please remove the invalid input or write something in it")
+                        }else{
+
+                            this.inputValues.push(input.value);
+                            console.log(this.inputValues)
+                        }
+
+                    }
+                })
+
+            })
+
+
 
 
 
@@ -60,11 +81,33 @@ export class OpinionPoll {
 
     saveData(){
 
+        let inputData ={
+            input_Theme_Value:this.theme_Input.value,
+            input_Theme_ID:this.theme_Input_ID,
+            input:{
+                input_Value:[],
+                input_ID:[],
+                inputs_Length: this.createdInput,
+            },
+        }
+
+
+
+
+
+        for(let i = 0; i < this.createdInput; i++){
+
+            inputData.input.input_Value.push(this.inputValues[i]);
+        }
+
+        this.input_Data.push(inputData);
+
+        console.log(this.input_Data);
+
+
     }
     handlePublication(){
-
-        console.log(this.input.value);
-        console.log();
+        this.saveData();
 
 
     }
