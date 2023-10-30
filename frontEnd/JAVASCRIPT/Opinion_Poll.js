@@ -12,11 +12,14 @@ export class OpinionPoll {
 
         this.createdInput = 0;
         this.generated_ObjectID = 111.1;
+        this.inputID = 0;
 
         this.opinionInput_Array =[];
         this.deleteButtons = [];
         this.inputs = [];
         this.inputValues = [];
+        this.inputIDs = [];
+        this.IDs = [];
 
 
         this.input_Data = [];
@@ -38,7 +41,11 @@ export class OpinionPoll {
             this.input.placeholder="Answer";
             this.input.size=30;
             this.input.classList.add("opinionInput");
+            this.input.id = this.inputID++;
+            console.log(this.input.id);
 
+            this.inputIDs.push(this.input.id);
+            console.log(this.inputIDs);
             this.createdInput_Container.appendChild(this.opinionInput_Container);
             this.opinionInput_Container.append(this.input);
             this.opinionInput_Container.appendChild(this.deleteButton);
@@ -103,10 +110,12 @@ export class OpinionPoll {
 
         for(let i = 0; i < this.createdInput; i++){
             inputData.input.input_Value.push(this.inputValues[i]);
+            inputData.input.input_ID.push(this.inputIDs[i]);
+            console.log(inputData.input.input_ID);
         }
 
         this.input_Data.push(inputData);
-
+        this.theme_Input_ID++;
         console.log(this.input_Data);
         this.generated_ObjectID += 111.1;
         console.log(this.generated_ObjectID);
@@ -169,8 +178,9 @@ export class OpinionPoll {
 
 //mitnehmen für nächste wochen
 /*
-* Delete buttons fixen  2-3h  gefixt
-* id herausgabe input felder 30-40min
+* Delete buttons fixen 2-3h (gefixt)
+*
+* id herausgabe input felder 30-40min (gefixt)
 * eingabe der value und speicher im Array fixen 4h
 * fetch data programmieren für das backend 5 h
 * */
