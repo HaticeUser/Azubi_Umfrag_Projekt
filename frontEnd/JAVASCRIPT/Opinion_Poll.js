@@ -10,13 +10,13 @@ export class OpinionPoll {
         this.deleteButton = document.createElement("input");
         this.opinionInput_Container = document.createElement("div");
 
-        this.createdInput=0;
-        this.generated_ObjectID= 111.1;
+        this.createdInput = 0;
+        this.generated_ObjectID = 111.1;
 
-        this.opinionInp_Container=[];
-        this.deleteButtons=[];
-        this.inputs=[];
-        this.inputValues=[];
+        this.opinionInput_Array =[];
+        this.deleteButtons = [];
+        this.inputs = [];
+        this.inputValues = [];
 
 
         this.input_Data = [];
@@ -43,8 +43,8 @@ export class OpinionPoll {
             this.opinionInput_Container.append(this.input);
             this.opinionInput_Container.appendChild(this.deleteButton);
             this.inputs.push(this.input);
-            this.opinionInp_Container.push(this.opinionInput_Container);
-            console.log(this.opinionInp_Container)
+            this.opinionInput_Array.push(this.opinionInput_Container);
+
 
             this.deleteButtons.push(this.deleteButton);
 
@@ -63,7 +63,7 @@ export class OpinionPoll {
                 input.addEventListener("keydown",(event)=>{
                     if(event.key === "Enter"){
                         event.preventDefault();
-                        if(input.value==""){
+                        if(input.value == ""){
                             alert("please remove the invalid input or write something in it")
                         }else{
                             // Darum Kümmern das nicht doppelt gespeichert wird
@@ -88,7 +88,7 @@ export class OpinionPoll {
     saveData(){
 
         let objIdToString = this.generated_ObjectID.toString();
-        let returnObjIDNumbers= objIdToString.substring(0,5);
+        let returnObjIDNumbers = objIdToString.substring(0,5);
 
         let inputData ={
             input_Theme_Value:this.theme_Input.value,
@@ -113,7 +113,7 @@ export class OpinionPoll {
         console.log(returnObjIDNumbers);
     }
     handlePublication(){
-        if(this.input.value=="" || this.theme_Input.value==""){
+        if(this.input.value == "" || this.theme_Input.value == ""){
             alert("you need to write something into the input field");
         }else{
             this.saveData();
@@ -135,19 +135,20 @@ export class OpinionPoll {
 
         // removen der divs kümmern
 
-        while(this.opinionInp_Container.firstChild){
-            this.opinionInp_Container.forEach((opInp_Container) => {
+
+            this.opinionInput_Array.forEach((opInp_Container) => {
 
                 opInp_Container.remove();
 
             })
-        }
+
 
 
 
         this.input_Data = [];
         this.inputs = [];
         this.inputValues = [];
+        this.opinionInput_Array = [];
 
 
     }
@@ -168,7 +169,7 @@ export class OpinionPoll {
 
 //mitnehmen für nächste wochen
 /*
-* Delete buttons fixen  2-3h
+* Delete buttons fixen  2-3h  gefixt
 * id herausgabe input felder 30-40min
 * eingabe der value und speicher im Array fixen 4h
 * fetch data programmieren für das backend 5 h
