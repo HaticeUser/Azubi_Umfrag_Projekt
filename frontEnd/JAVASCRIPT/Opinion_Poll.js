@@ -4,7 +4,7 @@ export class OpinionPoll {
     constructor() {
         this.createdInput_Container = document.getElementById("createdInput-Container");
         this.theme_Input = document.getElementById("themeInput");
-        this.theme_Input_ID = 0,
+        this.theme_Input_ID = 0;
 
         this.input = document.createElement("input");
         this.deleteButton = document.createElement("input");
@@ -13,6 +13,7 @@ export class OpinionPoll {
         this.createdInput=0;
         this.generated_ObjectID= 111.1;
 
+        this.opinionInp_Container=[];
         this.deleteButtons=[];
         this.inputs=[];
         this.inputValues=[];
@@ -26,23 +27,26 @@ export class OpinionPoll {
 
         if(this.createdInput < 4 ){
             this.createdInput++;
-        this.input = document.createElement("input");
-        this.deleteButton = document.createElement("input");
-        this.deleteButton.setAttribute("type","button");
-        this.deleteButton.setAttribute("value","X");
-        this.opinionInput_Container = document.createElement("div");
-        this.opinionInput_Container.classList.add("OpinionInput-Container");
-        this.deleteButton.classList.add("deleteInput-btn");
-        this.input.type="text";
-        this.input.placeholder="Answer";
-        this.input.size=30;
-        this.input.classList.add("opinionInput");
-        this.createdInput_Container.appendChild(this.opinionInput_Container);
-        this.opinionInput_Container.append(this.input);
-        this.opinionInput_Container.appendChild(this.deleteButton);
-        this.inputs.push(this.input);
+            this.input = document.createElement("input");
+            this.deleteButton = document.createElement("input");
+            this.deleteButton.setAttribute("type","button");
+            this.deleteButton.setAttribute("value","X");
+            this.opinionInput_Container = document.createElement("div");
+            this.opinionInput_Container.classList.add("OpinionInput-Container");
+            this.deleteButton.classList.add("deleteInput-btn");
+            this.input.type="text";
+            this.input.placeholder="Answer";
+            this.input.size=30;
+            this.input.classList.add("opinionInput");
 
-        this.deleteButtons.push(this.deleteButton);
+            this.createdInput_Container.appendChild(this.opinionInput_Container);
+            this.opinionInput_Container.append(this.input);
+            this.opinionInput_Container.appendChild(this.deleteButton);
+            this.inputs.push(this.input);
+            this.opinionInp_Container.push(this.opinionInput_Container);
+            console.log(this.opinionInp_Container)
+
+            this.deleteButtons.push(this.deleteButton);
 
             this.deleteButtons.forEach((delBtn) => {
                 delBtn.addEventListener("click", (event)=>{
@@ -56,10 +60,10 @@ export class OpinionPoll {
 
 
             this.inputs.forEach((input)=>{
-            input.addEventListener("keydown",(event)=>{
+                input.addEventListener("keydown",(event)=>{
                     if(event.key === "Enter"){
                         event.preventDefault();
-                        if(this.input.value==""){
+                        if(input.value==""){
                             alert("please remove the invalid input or write something in it")
                         }else{
                             // Darum Kümmern das nicht doppelt gespeichert wird
@@ -83,8 +87,8 @@ export class OpinionPoll {
 
     saveData(){
 
-       let objIdToString = this.generated_ObjectID.toString();
-       let returnObjIDNumbers= objIdToString.substring(0,5);
+        let objIdToString = this.generated_ObjectID.toString();
+        let returnObjIDNumbers= objIdToString.substring(0,5);
 
         let inputData ={
             input_Theme_Value:this.theme_Input.value,
@@ -94,7 +98,7 @@ export class OpinionPoll {
                 input_ID:[],
                 inputs_Length: this.createdInput,
             },
-            object_ID: returnObjIDNumbers
+            object_ID: returnObjIDNumbers,
         }
 
         for(let i = 0; i < this.createdInput; i++){
@@ -109,24 +113,42 @@ export class OpinionPoll {
         console.log(returnObjIDNumbers);
     }
     handlePublication(){
-        this.saveData();
-        this.handleReset()
+        if(this.input.value=="" || this.theme_Input.value==""){
+            alert("you need to write something into the input field");
+        }else{
+            this.saveData();
+            this.handleReset();
+
+        }
+
 
     }
 
     handleReset(){
 
-        this.createdInput =0;
-        this.theme_Input.value="";
+        this.createdInput = 0;
+        this.theme_Input.value = "";
         this.inputs.forEach((input)=>{
             input.removeEventListener("keydown",this.handleInputKeyDown);
-            input.value="";
+            input.value = "";
         })
 
         // removen der divs kümmern
+
+        while(this.opinionInp_Container.firstChild){
+            this.opinionInp_Container.forEach((opInp_Container) => {
+
+                opInp_Container.remove();
+
+            })
+        }
+
+
+
         this.input_Data = [];
-        this.inputs=[];
-        this.inputValues=[];
+        this.inputs = [];
+        this.inputValues = [];
+
 
     }
 
@@ -144,3 +166,10 @@ export class OpinionPoll {
     }
 }
 
+//mitnehmen für nächste wochen
+/*
+* Delete buttons fixen  2-3h
+* id herausgabe input felder 30-40min
+* eingabe der value und speicher im Array fixen 4h
+* fetch data programmieren für das backend 5 h
+* */
