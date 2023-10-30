@@ -11,22 +11,23 @@
     // Welcome.html functions
 
    export function handleLocationID(locationID){
-
         locationHref.locationHandler(locationID);
-
     }
 
 
     // Opinion_Poll.html functions
-    export function handleInputCreationRequest(){
-        opinion_Poll.handleInputCreation();
+    export function handleInputCreationRequest(event){
+       event.preventDefault();
+       opinion_Poll.handleInputCreation();
     }
 
-    export function handlePublicationRequest(){
+    export function handlePublicationRequest(event){
+        event.preventDefault();
         opinion_Poll.handlePublication();
 
     }
 
-    export function handleResetRequest(){
+    export function handleResetRequest(event){
+        event.preventDefault();
        opinion_Poll.handleReset();
     }
