@@ -12,7 +12,7 @@ export class OpinionPoll {
 
         this.createdInput = 0;
         this.generated_ObjectID = 111.1;
-        this.inputID = 0;
+        this.inputID = 1;
 
         this.opinionInput_Array =[];
         this.deleteButtons = [];
@@ -74,23 +74,28 @@ export class OpinionPoll {
 
 
         let inputData ={
-            input_Theme_Value:this.theme_Input.value,
-            input_Theme_ID:this.theme_Input_ID,
+            input_Theme_Value: this.theme_Input.value,
+            input_Theme_ID: this.theme_Input_ID,
             input:{
-                input_ValueID:[],
+
+                input_ValueID: [],
+
                 inputs_Length: this.createdInput,
             },
             object_ID: returnObjIDNumbers,
         }
 
         for(let i = 0; i < this.createdInput; i++){
+
+
             let object={
+
                 inputValue:this.inputs[i].value,
                 inputID:this.inputIDs[i],
             }
             inputData.input.input_ValueID.push(object);
 
-            console.log(inputData.input.input_ID);
+
         }
 
         this.input_Data.push(inputData);
@@ -99,6 +104,8 @@ export class OpinionPoll {
         this.generated_ObjectID += 111.1;
         console.log(this.generated_ObjectID);
         console.log(returnObjIDNumbers);
+        console.log(inputData);
+        this.sendDataToBackend(inputData);
     }
     handlePublication(){
         if(this.input.value == "" || this.theme_Input.value == ""){
@@ -150,10 +157,30 @@ export class OpinionPoll {
 
 //Backend Logik
 
-    sendDataToBackend(){
+    sendDataToBackend(Data){
+        // Richtiger link muss noch eingefügt werden (brauch ich vom backend)
 
 
-    }
+
+            fetch('https://fakefake', {
+                method:'POST', // Auf der anderen seite GET
+                headers:{
+                    'Content-Type': 'application.json'
+                },
+                body:JSON.stringify(Data)
+            })
+
+                .then(res => res.json())
+                .then(data => console.log(data))
+                .catch(err => {
+                    console.error("fehler beim senden der Daten: ",err)
+                })
+        }
+
+
+
+
+
 }
 
 //mitnehmen für nächste wochen
