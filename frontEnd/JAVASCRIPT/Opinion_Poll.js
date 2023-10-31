@@ -77,14 +77,19 @@ export class OpinionPoll {
             input_Theme_Value: this.theme_Input.value,
             input_Theme_ID: this.theme_Input_ID,
             input:{
+
                 input_ValueID: [],
+
                 inputs_Length: this.createdInput,
             },
             object_ID: returnObjIDNumbers,
         }
 
         for(let i = 0; i < this.createdInput; i++){
-            let object = {
+
+
+            let object={
+
                 inputValue:this.inputs[i].value,
                 inputID:this.inputIDs[i],
             }
@@ -171,6 +176,7 @@ export class OpinionPoll {
                     console.error("fehler beim senden der Daten: ",err)
                 })
         }
+
 
 
 
