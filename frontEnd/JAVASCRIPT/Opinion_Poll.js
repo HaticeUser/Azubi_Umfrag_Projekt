@@ -17,9 +17,8 @@ export class OpinionPoll {
         this.opinionInput_Array =[];
         this.deleteButtons = [];
         this.inputs = [];
-        this.inputValues = [];
         this.inputIDs = [];
-        this.IDs = [];
+
 
 
         this.input_Data = [];
@@ -64,30 +63,6 @@ export class OpinionPoll {
                 })
 
             })
-
-
-            this.inputs.forEach((input)=>{
-                input.addEventListener("keydown",(event)=>{
-                    if(event.key === "Enter"){
-                        event.preventDefault();
-                        if(input.value == ""){
-                            alert("please remove the invalid input or write something in it")
-                        }else{
-                            // Darum Kümmern das nicht doppelt gespeichert wird
-                            // speichern der einzelnden, nicht aller input.values mit einem enter klick
-                            this.inputValues.push(input.value);
-                            console.log(this.inputValues)
-                        }
-
-                    }
-                })
-
-            })
-
-
-
-
-
         }
 
     }
@@ -97,20 +72,24 @@ export class OpinionPoll {
         let objIdToString = this.generated_ObjectID.toString();
         let returnObjIDNumbers = objIdToString.substring(0,5);
 
+
         let inputData ={
             input_Theme_Value:this.theme_Input.value,
             input_Theme_ID:this.theme_Input_ID,
             input:{
-                input_Value:[],
-                input_ID:[],
+                input_ValueID:[],
                 inputs_Length: this.createdInput,
             },
             object_ID: returnObjIDNumbers,
         }
 
         for(let i = 0; i < this.createdInput; i++){
-            inputData.input.input_Value.push(this.inputValues[i]);
-            inputData.input.input_ID.push(this.inputIDs[i]);
+            let object={
+                inputValue:this.inputs[i].value,
+                inputID:this.inputIDs[i],
+            }
+            inputData.input.input_ValueID.push(object);
+
             console.log(inputData.input.input_ID);
         }
 
@@ -145,11 +124,11 @@ export class OpinionPoll {
         // removen der divs kümmern
 
 
-            this.opinionInput_Array.forEach((opInp_Container) => {
+        this.opinionInput_Array.forEach((opInp_Container) => {
 
-                opInp_Container.remove();
+            opInp_Container.remove();
 
-            })
+        })
 
 
 
@@ -173,6 +152,7 @@ export class OpinionPoll {
 
     sendDataToBackend(){
 
+
     }
 }
 
@@ -184,3 +164,10 @@ export class OpinionPoll {
 * eingabe der value und speicher im Array fixen 4h
 * fetch data programmieren für das backend 5 h
 * */
+
+/*Fix This bug :
+* Opinion_Poll.html?_ijt=trpdvnuf487f08kmjq1eke4e5n&_ij_reload=RELOAD_ON_SAVE:58 ErrorTypeError:
+*  Failed to fetch dynamically imported module:
+*  http://localhost:63342/Umfrage/frontEnd/JAVASCRIPT/Main.js
+* */
+
