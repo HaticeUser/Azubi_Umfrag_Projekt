@@ -21,8 +21,12 @@ export class locationsHandler{
                 urlLink: "../HTML/Support.html",
             },
             {
-                LocID: 0.50,
-                urlLink: "../HTM/Profile.html",
+                LocID: 0.60,
+                urlLink: "../HTML/Profile.html",
+            },
+            {
+                LocID: 0.72,
+                urlLink: "../HTML/Opinion_Oracale.html",
             },
 
 

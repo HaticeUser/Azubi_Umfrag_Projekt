@@ -1,3 +1,4 @@
+import {handleLocationID} from "./Main.js";
 
 export class OpinionPoll {
 
@@ -18,6 +19,8 @@ export class OpinionPoll {
         this.deleteButtons = [];
         this.inputs = [];
         this.inputIDs = [];
+
+
 
 
 
@@ -111,8 +114,15 @@ export class OpinionPoll {
         if(this.input.value == "" || this.theme_Input.value == ""){
             alert("you need to write something into the input field");
         }else{
-            this.saveData();
-            this.handleReset();
+
+            try{
+                // this.saveData();
+                this.handleReset();
+                handleLocationID(0.72)
+            }catch (e) {
+                throw "Fehler:" + e ;
+
+            }
 
         }
 
@@ -137,9 +147,6 @@ export class OpinionPoll {
 
         })
 
-
-
-
         this.input_Data = [];
         this.inputs = [];
         this.inputValues = [];
@@ -157,28 +164,28 @@ export class OpinionPoll {
 
 //Backend Logik
 
-    sendDataToBackend(Data){
-        // Richtiger link muss noch eingefügt werden (brauch ich vom backend)
-
-
-
-            fetch('https://fakefake', {
-                method:'POST', // Auf der anderen seite GET
-                headers:{
-                    'Content-Type': 'application.json'
-                },
-                body:JSON.stringify(Data)
-            })
-
-                .then(res => res.json())
-                .then(data => console.log(data))
-                .catch(err => {
-                    console.error("fehler beim senden der Daten: ",err)
-                })
-        }
-
-
-
+    // sendDataToBackend(Data){
+    //     // Richtiger link muss noch eingefügt werden (brauch ich vom backend)
+    //
+    //
+    //
+    //         fetch('https://fakefake', {
+    //             method:'POST', // Auf der anderen seite GET
+    //             headers:{
+    //                 'Content-Type': 'application.json'
+    //             },
+    //             body:JSON.stringify(Data)
+    //         })
+    //
+    //             .then(res => res.json())
+    //             .then(data => console.log(data))
+    //             .catch(err => {
+    //                 console.error("fehler beim senden der Daten: ",err)
+    //             })
+    //     }
+    //
+    //
+    //
 
 
 }

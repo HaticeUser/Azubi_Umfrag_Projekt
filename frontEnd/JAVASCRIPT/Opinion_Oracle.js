@@ -10,8 +10,19 @@ Wenn wir auf Opinion_Poll eine umfrage erschaffen, dann posten, wird alles inm b
 datenbank übergeben, gleichzeitig verarbeitet das backend die daten und gibt sie im frontend
 auf dieser seite aus.
 
-Also müssen wir hier eine get anfrage posten.
+Also müssen wir hier eine get Anfrage posten.
+Sobald man bei der Opinion_poll seite auf posten klickt, öffnet sich diese
+Seite und sendet anfragen ans backend die anfragen an die Datenbank senden
+und geben es und per api stelle wieder zurück, wo dann javascript
+also hier, die daten nutzt um es ins html mit ihren designs steckt.
 
+
+
+Beim klicken, der check inbox button, sogesagt bei der auswahl der antwort
+werden alle anderen checkboxen disabled
+
+-Nach der pause, vom klick der einen webseite auf die anderen bringen
+location-handler();
 *
  */
 

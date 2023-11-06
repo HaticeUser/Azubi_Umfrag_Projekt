@@ -24,6 +24,7 @@
     export function handlePublicationRequest(event){
         event.preventDefault();
         opinion_Poll.handlePublication();
+;
 
     }
 
