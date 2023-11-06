@@ -4,7 +4,12 @@ body{
     background-image: linear-gradient(to left, #7f5cce, #b393d3);
 }
 
+/*
+-------------------------- Main Bereich ------------------------
+*/
+
 .opinion_Poll-Creater-Container{
+
     background-color: grey;
     display: flex;
     position: relative;
@@ -13,7 +18,6 @@ body{
 
 .opinion_Poll-Creater-Container > .create-Opinion_Poll-Container{
     position: absolute;
-
     top: 100px;
     padding: 25px;
 }
@@ -135,6 +139,7 @@ body{
 
 
 .functioning_dispatch-info-Container{
+
 
 }
 
