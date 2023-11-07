@@ -22,7 +22,24 @@ Beim klicken, der check inbox button, sogesagt bei der auswahl der antwort
 werden alle anderen checkboxen disabled
 
 -Nach der pause, vom klick der einen webseite auf die anderen bringen
-location-handler();
+location-handler(); (fertig)
+
+    fetch('https/fakesite', {
+    Method:"GET",
+    header:{
+        'Content-Type':'application/json'
+    },
+
+    })
+    .then(res=>res.json())
+        .then(data=> console.log(data))
+        .catch(err=>{
+            alert("Backend daten annahme fehler :" + err)
+        })
+
+
 *
  */
+
+
 
