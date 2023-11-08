@@ -31,3 +31,8 @@ build/
 
 ### VS Code ###
 .vscode/
+
+
+### js code###
+./src/main/resources/static/JAVASCRIPT/test.js
+./src/main/resources/static/JAVASCRIPT/testo.js

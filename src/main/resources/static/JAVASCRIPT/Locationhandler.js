@@ -10,7 +10,7 @@ export class locationsHandler{
             },
             {
                 LocID: 0.24,
-                urlLink: "../HTML/Opinion_Poll.html",
+                urlLink: "/HTML/Opinion_Poll.html",
             },
             {
                 LocID: 0.36,
@@ -26,7 +26,7 @@ export class locationsHandler{
             },
             {
                 LocID: 0.72,
-                urlLink: "../HTML/Opinion_Oracale.html",
+                urlLink: "",
             },
 
 
@@ -34,20 +34,20 @@ export class locationsHandler{
 
 
     locationHandler(locationID){
-
         for(let i = 0 ; i <= this.Links.length; i++){
             try{
-
                 if(locationID == this.Links[i].LocID ){
-
                 location.href=this.Links[i].urlLink;
-
                 break;
                 }
-
             }catch(err){
                 throw "Dieser link wurde nicht gefunden";
             }
+
+            // const PageLink = this.Links.find(item => item.LocID === locationID);
+            // if (PageLink) {
+            //     location.href=pageLink.urlLink;
+            // }
 
         }
 
