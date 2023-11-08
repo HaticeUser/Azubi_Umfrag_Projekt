@@ -2897,6 +2897,7 @@ textarea.form-control-lg {
 .btn {
   --mo-btn-padding-x: 0.75rem;
   --mo-btn-padding-y: 0.375rem;
+  --mo-btn-font-family: ;
   --mo-btn-font-size: 1rem;
   --mo-btn-font-weight: 400;
   --mo-btn-line-height: 1.5;
@@ -3624,6 +3625,7 @@ textarea.form-control-lg {
   --mo-dropdown-color: #dee2e6;
   --mo-dropdown-bg: #343a40;
   --mo-dropdown-border-color: var(--mo-border-color-translucent);
+  --mo-dropdown-box-shadow: ;
   --mo-dropdown-link-color: #dee2e6;
   --mo-dropdown-link-hover-color: #fff;
   --mo-dropdown-divider-bg: var(--mo-border-color-translucent);
@@ -3744,6 +3746,7 @@ textarea.form-control-lg {
 .nav {
   --mo-nav-link-padding-x: 1rem;
   --mo-nav-link-padding-y: 0.5rem;
+  --mo-nav-link-font-weight: ;
   --mo-nav-link-color: var(--mo-link-color);
   --mo-nav-link-hover-color: var(--mo-link-hover-color);
   --mo-nav-link-disabled-color: var(--mo-secondary-color);
@@ -3931,7 +3934,7 @@ textarea.form-control-lg {
 .navbar-nav {
   --mo-nav-link-padding-x: 0;
   --mo-nav-link-padding-y: 0.5rem;
-
+  --mo-nav-link-font-weight: ;
   --mo-nav-link-color: var(--mo-navbar-color);
   --mo-nav-link-hover-color: var(--mo-navbar-hover-color);
   --mo-nav-link-disabled-color: var(--mo-navbar-disabled-color);
@@ -4312,16 +4315,19 @@ textarea.form-control-lg {
   --mo-card-spacer-y: 1rem;
   --mo-card-spacer-x: 1rem;
   --mo-card-title-spacer-y: 0.5rem;
-
+  --mo-card-title-color: ;
+  --mo-card-subtitle-color: ;
   --mo-card-border-width: var(--mo-border-width);
   --mo-card-border-color: var(--mo-border-color-translucent);
   --mo-card-border-radius: var(--mo-border-radius);
-
+  --mo-card-box-shadow: ;
   --mo-card-inner-border-radius: calc(var(--mo-border-radius) - (var(--mo-border-width)));
   --mo-card-cap-padding-y: 0.5rem;
   --mo-card-cap-padding-x: 1rem;
   --mo-card-cap-bg: rgba(var(--mo-body-color-rgb), 0.03);
-
+  --mo-card-cap-color: ;
+  --mo-card-height: ;
+  --mo-card-color: ;
   --mo-card-bg: var(--mo-body-bg);
   --mo-card-img-overlay-padding: 1rem;
   --mo-card-group-margin: 0.75rem;
@@ -4637,7 +4643,8 @@ textarea.form-control-lg {
   --mo-breadcrumb-padding-x: 0;
   --mo-breadcrumb-padding-y: 0;
   --mo-breadcrumb-margin-bottom: 1rem;
-
+  --mo-breadcrumb-bg: ;
+  --mo-breadcrumb-border-radius: ;
   --mo-breadcrumb-divider-color: var(--mo-secondary-color);
   --mo-breadcrumb-item-padding-x: 0.5rem;
   --mo-breadcrumb-item-active-color: var(--mo-secondary-color);
@@ -5336,6 +5343,7 @@ textarea.form-control-lg {
   --mo-toast-spacing: 1.5rem;
   --mo-toast-max-width: 350px;
   --mo-toast-font-size: 0.875rem;
+  --mo-toast-color: ;
   --mo-toast-bg: rgba(var(--mo-body-bg-rgb), 0.85);
   --mo-toast-border-width: var(--mo-border-width);
   --mo-toast-border-color: var(--mo-border-color-translucent);
@@ -5400,6 +5408,7 @@ textarea.form-control-lg {
   --mo-modal-width: 500px;
   --mo-modal-padding: 1rem;
   --mo-modal-margin: 0.5rem;
+  --mo-modal-color: ;
   --mo-modal-bg: var(--mo-body-bg);
   --mo-modal-border-color: var(--mo-border-color-translucent);
   --mo-modal-border-width: var(--mo-border-width);
@@ -5413,6 +5422,7 @@ textarea.form-control-lg {
   --mo-modal-header-border-width: var(--mo-border-width);
   --mo-modal-title-line-height: 1.5;
   --mo-modal-footer-gap: 0.5rem;
+  --mo-modal-footer-bg: ;
   --mo-modal-footer-border-color: var(--mo-border-color);
   --mo-modal-footer-border-width: var(--mo-border-width);
   position: fixed;
@@ -5691,6 +5701,7 @@ textarea.form-control-lg {
   --mo-tooltip-max-width: 200px;
   --mo-tooltip-padding-x: 0.5rem;
   --mo-tooltip-padding-y: 0.25rem;
+  --mo-tooltip-margin: ;
   --mo-tooltip-font-size: 0.875rem;
   --mo-tooltip-color: var(--mo-body-bg);
   --mo-tooltip-bg: var(--mo-emphasis-color);

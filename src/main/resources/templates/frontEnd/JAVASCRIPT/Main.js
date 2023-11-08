@@ -1,6 +1,6 @@
     "use strict"
 
-    import {locationsHandler} from  "./Locationhandler.js"
+    import {locationsHandler} from "./Locationhandler.js"
     import {OpinionPoll} from "./Opinion_Poll.js";
 
     let locationHref = new locationsHandler();
