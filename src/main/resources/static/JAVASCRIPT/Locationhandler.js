@@ -26,7 +26,7 @@ export class locationsHandler{
             },
             {
                 LocID: 0.72,
-                urlLink: "",
+                urlLink: "/HTML/Opinion_Oracale.html",
             },
 
 

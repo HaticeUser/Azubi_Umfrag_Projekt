@@ -7,13 +7,20 @@ public class HandlePageController {
 
 
 
-    @GetMapping("/Site")
-    public String ConnectWelcomeWithBackend(){
+    @GetMapping("/Welcome.html")
+    public String ConnectWelcomeWithSpring(){
         return "frontEnd/HTML/Welcome";
     }
+
     @GetMapping("/HTML/Opinion_Poll.html")
-    public String ConnectOpinionPollWithSpring (){
+    public String ConnectOpinionPollWithSpring () {
         return "frontEnd/HTML/Opinion_Poll";
+    }
+
+    @GetMapping("/HTML/Opinion_Oracale.html")
+    public String ConnectOpinionOracaleWithSpring () {
+        return "frontEnd/HTML/Opinion_Oracale";
+
 
     }
 
