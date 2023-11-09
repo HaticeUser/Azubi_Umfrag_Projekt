@@ -10,7 +10,7 @@ export class locationsHandler{
             },
             {
                 LocID: 0.24,
-                urlLink: "/HTML/Opinion_Poll.html",
+                urlLink: "/site/opinionpoll",
             },
             {
                 LocID: 0.36,
@@ -26,7 +26,7 @@ export class locationsHandler{
             },
             {
                 LocID: 0.72,
-                urlLink: "/HTML/Opinion_Oracale.html",
+                urlLink: "/site/opinionoracale",
             },
 
 

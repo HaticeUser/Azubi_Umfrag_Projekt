@@ -200,7 +200,7 @@ export class OpinionPoll {
 * */
 
 /*Fix This bug :
-* Opinion_Poll.html?_ijt=trpdvnuf487f08kmjq1eke4e5n&_ij_reload=RELOAD_ON_SAVE:58 ErrorTypeError:
+* opinionpoll.html?_ijt=trpdvnuf487f08kmjq1eke4e5n&_ij_reload=RELOAD_ON_SAVE:58 ErrorTypeError:
 *  Failed to fetch dynamically imported module:
 *  http://localhost:63342/Umfrage/frontEnd/JAVASCRIPT/Main.js
 * */

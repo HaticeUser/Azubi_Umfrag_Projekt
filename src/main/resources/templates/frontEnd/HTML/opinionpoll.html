@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../STYLE/CSS/Opinion_Poll.css">
+    <title>OpinionPoll</title>
+    <link rel="stylesheet" href="STYLE/CSS/Opinion_Poll.css">
     <link rel="stylesheet" href="../STYLE/CSS/Welcome.css">
 
 </head>
@@ -30,7 +30,7 @@
         </div>
 
         <div class="nav-links">
-            <button class="opinion_poll_header_link"> <a href="Opinion_Poll.html" target="_blank" >Opinion Polls</a></button>
+            <button class="opinion_poll_header_link"> <a href="/site/opinionpoll" target="_blank" >Opinion Polls</a></button>
             <a href="http://stackoverflow.com/users/4084003/" target="_blank">News</a>
             <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Support</a>
             <a href="https://in.linkedin.com/in/jonesvinothjoseph" target="_blank">Profile</a>
@@ -55,9 +55,9 @@
                     <div class="opinion_Poll-header">
                     <input id="themeInput" value="" type="text" placeholder="Your topic" size="28" maxlength="80">
 
-                    <button class="header-btn" onclick="import('../JAVASCRIPT/Main.js').then(modules => modules.handleInputCreationRequest(event)).catch(error => console.error('Error'+error)) ">Create Opinion fields</button>
+                    <button class="header-btn"  onclick="import('./JAVASCRIPT/Main.js').then(modules => modules.handleInputCreationRequest(event)).catch(error => console.error('Error'+error)) ">Create Opinion fields</button>
 
-                    <button class="header-btn"   onclick="import('../JAVASCRIPT/Main.js').then(modules => modules.handleResetRequest(event)).catch(error => console.error('Error'+error)) ">delete all</button>
+                    <button class="header-btn"   onclick="import('./JAVASCRIPT/Main.js').then(modules => modules.handleResetRequest(event)).catch(error => console.error('Error'+error)) ">delete all</button>
                     </div>
 
                     <div id="createdInput-Container">
@@ -73,7 +73,7 @@
 
 
 
-                    <button id="publish-Btn" onclick="import('../JAVASCRIPT/Main.js').then(modules => modules.handlePublicationRequest(event)).catch(error => console.error('Error'+error)) ">Publish</button>
+                    <button id="publish-Btn" href="/site/Welcome" onclick="import('./JAVASCRIPT/Main.js').then(modules => modules.handlePublicationRequest(event)).catch(error => console.error('Error'+error)) ">Publish</button>
 
               <section class="functioning_dispatch-info-Container">
                   <p class="functioning_dispatch-info">
@@ -92,7 +92,7 @@
 </main>
 
 <script type="module">
-    import{handleInputCreationRequest, handlePublicationRequest, handleResetRequest} from "../JAVASCRIPT/Main.js"
+    import{handleInputCreationRequest, handlePublicationRequest, handleResetRequest} from "./JAVASCRIPT/Main.js"
 
 
 </script>

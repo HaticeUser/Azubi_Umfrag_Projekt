@@ -8,14 +8,14 @@
 
 
 
-    // Welcome.html functions
+    // opiniuspollinus.html functions
 
    export function handleLocationID(locationID){
         locationHref.locationHandler(locationID);
     }
 
 
-    // Opinion_Poll.html functions
+    // opinionpoll.html functions
     export function handleInputCreationRequest(event){
        event.preventDefault();
        opinion_Poll.handleInputCreation();
