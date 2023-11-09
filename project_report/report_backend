@@ -1,6 +1,16 @@
 
 
----jar vollständig eingefügt
----postman getestet und ins projekt eingefügt (funktoniert).
--Postman mit get anfrage, Projekt aufgerufen.
 
+09.11.2023 = : Der letzte stand wurde gepusht, ohne bisher wissenden bugs/fehler/Problemen,
+               links sind auf eigene getMapping schnittstellen zugreifbar, durch spring einen server-
+               Context-Path angelegt, namens '/site'.
+                                                        (http://localhost:8080/site/welcome).
+                                                        (http://localhost:8080/site/opinionpoll).
+                                                        (http://localhost:8080/site/opinionoracale).
+
+*--- jar vollständig eingefügt
+*--- postman getestet und ins projekt eingefügt (funktoniert).
+     +-- Postman mit get anfrage, Projekt aufgerufen.
+
+---------------------------------------------------------------------------------------------------
+10.11.2023 = :
